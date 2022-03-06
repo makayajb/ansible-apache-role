@@ -1,5 +1,6 @@
 ---
 - name: Test Apache role
+  hosts: prod
   become: true
   vars_files:
     - files/secrets/credentials.yml
@@ -10,5 +11,6 @@
 # ansible-galaxy install -r roles/requirements.yml
 
 ## Exécution du playbook
-# ansible-playbook -i hosts.yml --ask-vault-pass wordpress.yml
+# ansible-playbook -i hosts.yml --ask-vault-pass -K test.yml
+# -K, --ask-become-pass: ask for privilege escalation password
 # PWD vault: devops
