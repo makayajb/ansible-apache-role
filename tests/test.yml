@@ -1,0 +1,14 @@
+---
+- name: Test Apache role
+  become: true
+  vars_files:
+    - files/secrets/credentials.yml
+  roles:
+    - { role: ansible-apache-role }
+
+## Installation du rôle
+# ansible-galaxy install -r roles/requirements.yml
+
+## Exécution du playbook
+# ansible-playbook -i hosts.yml --ask-vault-pass wordpress.yml
+# PWD vault: devops

@@ -1,0 +1,12 @@
+galaxy_info:
+  author: Jean-Baptiste MAKAYA
+  description: Deploy & run Docker project for static html with Apache server
+
+  license: license (GPLv3)
+
+  galaxy_tags:
+    - development
+    - role
+    - docker
+    - apache
+    - pozos
