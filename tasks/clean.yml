@@ -1,0 +1,5 @@
+---
+- name: Clean working dir
+  file:
+    path: "{{ aar_working_dir }}"
+    state: absent

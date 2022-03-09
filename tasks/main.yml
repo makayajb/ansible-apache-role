@@ -17,15 +17,8 @@
 #- name: Install docker python
 #  pip: name=docker-py
 
-- name: Create working directory
-  file:
-    path: "{{ aar_working_dir }}"
-    state: directory
-
-- name: Copy website file template
-  template:
-    src: "{{ aar_index_file }}"
-    dest: "{{ aar_working_dir }}/index.html"
+- name: Init
+  import_tasks: init.yml
 
 - name: Create Apache container
   docker_container:
@@ -36,7 +29,5 @@
     volumes:
       - "{{ aar_working_dir }}/index.html:/usr/local/apache2/htdocs/index.html"
 
-- name: Clean working dir
-  file:
-    path: "{{ aar_working_dir }}"
-    state: absent
+- name: Clean
+  import_tasks: clean.yml
