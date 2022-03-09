@@ -1,2 +1,3 @@
 ---
-apache_index_file: index.html.j2
+aar_index_file: index.html.j2
+aar_working_dir: "{{ansible_user_dir}}/ansible-apache-role"
